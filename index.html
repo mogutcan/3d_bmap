@@ -1,1 +1,215 @@
-My GitHub Page
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="src/jquery.tokeninput.js"></script>
+
+    <link rel="stylesheet" href="styles/token-input.css" type="text/css" />
+    <link rel="stylesheet" href="styles/token-input-facebook.css" type="text/css" />
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("input[type=button]").click(function () {
+            alert("Would submit: " + $(this).siblings("input[type=text]").val());
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <h1>&nbsp;</h1>
+    
+    
+    <script type="text/javascript"> 
+
+function changeIt() 
+{
+var theImg = document.getElementsByTagName('img')[0].src;
+
+var x = theImg.split("/");
+var t = x.length-1;
+var y = x[t];
+
+if(y=='on.png')
+{
+document.images.example.src='arka.png'
+
+}
+
+if(y=='arka.png')
+{
+document.images.example.src='sol.png'
+}
+if(y=='sol.png')
+{
+document.images.example.src='sag.png'
+}
+
+if(y=='sag.png')
+{
+document.images.example.src='on.png'
+}
+
+
+
+}
+
+</script>
+<a href="#" onClick="changeIt()">cevir</a> <img src='on.png' name='example' border='0'
+
+
+<img class="map" src="on.png" usemap="#bmap"  />
+<map id="bmap" name="bmap">
+	
+  <area shape="rect" alt="gogus" coords="57,106,73,125"  href="#" target="" title="chest" onClick="sec('01');" >
+    
+  <area shape="rect" alt="r_shoulder" coords="56,184,72,203"  href="#" target="" title="karaciger" onClick="sec('02');" >
+    
+    
+  <area shape="rect" alt="l_arm" 	  coords="104,171,120,190" href="#" target="" title="mide"      onclick="sec('03');" >
+  
+    
+  <area shape="rect" alt="r_arm" 	  coords="117,297,133,316" href="#" target="" title="l_arm"      onclick="sec('05');" >
+    
+  <area shape="rect" alt="r_sırt" 	  coords="67,355,83,374" href="#" target="" title="r_arm"      onclick="sec('04');" >
+    
+    
+    
+	<area shape="rect" alt="sol_sırt"  	  coords="59,114,83,138" href="#" target="" title="l_hand"     onclick="sec('06');" >
+  <area shape="rect" alt="r_bel" 	  coords="102,106,126,130"  href="#" target="" title="r_hand"     onclick="sec('07');" >
+    
+  <area shape="rect" alt="l_bel" 	  coords="63,174,87,198" href="#" target="" title="l_leg"      onclick="sec('08');" >
+  <area shape="rect" alt="r_bel" 	  coords="106,174,130,198" href="#" target="" title="r_leg"      onclick="sec('09');" >
+    
+  <area shape="rect" alt="l_knee" 	  coords="58,310,82,334" href="#" target="" title="l_knee"     onclick="sec('10');" >
+  <area shape="rect" alt="r_knee" 	  coords="109,305,133,329" href="#" target="" title="r_knee"     onclick="sec('11');" >
+  <area shape="rect" alt="l_ankle" 	  coords="72,418,96,442" href="#" target="" title="l_ankle"    onclick="sec('12');" >
+  <area shape="rect" alt="r_ankle" 	  coords="107,409,131,433" href="#" target="" title="r_ankle"    onclick="sec('13');" >
+    
+    
+    
+	<area shape="rect" alt="ust" 	  coords="112,102,133,122" href="#" target="" title="l_foot"     onclick="sec('14');" >
+  <area shape="rect" alt="orta" 	  coords="128,266,149,286" href="#" target="" title="r_foot"     onclick="sec('15');" >
+  <area shape="rect" alt="alt" 	  coords="119,375,133,396" href="#" target="" title="l_foot"     onclick="sec('16');" >
+    
+  <area shape="rect" alt="bilek" 	  coords="32,366,50,387" href="#" target="" title="l_foot"     onclick="sec('17');" >
+    
+    
+    <area shape="rect" alt="ust" 	  coords="45,127,66,149" href="#" target="" title="l_foot"     onclick="sec('18');" >
+  <area shape="rect" alt="orta" 	  coords="39,269,60,291" href="#" target="" title="r_foot"     onclick="sec('19');" >
+  <area shape="rect" alt="alt" 	  coords="54,395,75,417" href="#" target="" title="l_foot"     onclick="sec('20');" >
+    
+  <area shape="rect" alt="bilek" 	  coords="141,371,159,392" href="#" target="" title="l_foot"     onclick="sec('21');" >
+    
+    
+
+    
+    
+    
+</map>
+ 
+<script language="JavaScript" type="text/javascript">
+// Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function(from, to) {
+		  var rest = this.slice((to || from) + 1 || this.length);
+		    this.length = from < 0 ? this.length + from : from;
+			  return this.push.apply(this, rest);
+};
+
+function sec(bolge)
+{
+	var BOLGE = ['NULL', 'gogus', 'karaciger', 'mide', 'sag_diz', 'sol_baldir', 'sol_sırt', 'sag_sırt', 'sol_bel', 'sag_bel', 'arka_sol_baldır', 'arka_sag_baldır', 'sol_ayak', 'sag_yan_omuz', 'sag_yan_baldir' ,'sag_yan_ayak' , 'sag_bilek', 'sol_yan_omuz' , 'sol_yan_baldir' , 'sol_yan_ayak', 'sol_bilek'   ];
+	var hidden = document.getElementById('hselected');
+	var dict = hidden.value.split(',');
+	var anahtar = false;
+
+	bolge = bolge.toString();
+	if(hidden.value == "") {
+		hidden.value = bolge; 
+
+		var id = parseInt(bolge);
+		$("#selected").tokenInput("add", {id: id, name: BOLGE[id]});
+		return;
+	}
+	
+	for(var i=0; i<dict.length; i++)
+		if(dict[i] == bolge) {
+			dict.remove(i);
+
+			var id = parseInt(bolge);
+			$("#selected").tokenInput("remove", {name: BOLGE[id]});
+			anahtar = true;
+		}
+	
+	if(anahtar == false) {
+		dict.push(bolge);
+
+		var id = parseInt(bolge);
+		$("#selected").tokenInput("add", {id: id, name: BOLGE[id]});
+	}
+	
+	hidden.value = dict.join(",");
+}
+
+function soyle()
+{
+	var hidden = document.getElementById('selected');
+	var dict = hidden.value.split(',');
+	var BOLGE = ['neck', 'chest', 'l_shoulder', 'r_shoulder', 'l_arm', 'r_arm', 'l_leg', 'r_leg', 'l_knee', 'r_knee', 'l_ankle', 'r_ankle', 'l_foot', 'r_foot'];
+
+	var str = "";
+	for(var i=0; i<dict.length; i++)
+		str = str + BOLGE[dict[i] - 1] + ";";
+	
+	alert(str);
+}	
+</script>
+ 
+      
+<div>
+        <div class="tokeninput">
+		<p class="answer left" align="left">Tetkik yapmak istediiniz vucut haritasi uzerinde bolgeyi ya tiklayarak ekleyip/kaldirin 
+			veya sagdaki girdi alanina girerek yapnz.</p>
+		<label class="label">
+			<input type="text" name="selected" id="selected">
+		</label>
+	</div>
+	<input type="hidden" name="hselected" id="hselected">
+
+	<br>
+	<input type="submit" value="Secilenleri Soyle">
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $("#selected").tokenInput([
+				{id:1,  name: "neck"},
+				{id:2,  name: "chest"},
+				{id:3,  name: "l_shoulder"},
+				{id:4,  name: "r_shoulder"},
+				{id:5,  name: "l_arm"},
+				{id:6,  name: "r_arm"},
+				{id:7,  name: "l_leg"},
+				{id:8,  name: "r_leg"},
+				{id:9,  name: "l_knee"},
+				{id:10, name: "r_knee"},
+				{id:11, name: "l_ankle"},
+				{id:12, name: "r_ankle"},
+				{id:13, name: "l_foot"},
+				{id:14, name: "r_foot"},
+				{id:15, name: "null"},
+				{id:16, name: "null"},
+			]);
+          });
+    </script>
+    </div>
+  
+<!--
+<a href="#" onClick="changeIt()">cevir</a> <img src='on.png' name='example' border='0' />
+!-->
+<h2>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input").tokenInput("http://shell.loopj.com/tokeninput/tvshows.php");
+        });
+        </script></h2>
+</body>
+</html>
